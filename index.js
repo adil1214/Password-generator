@@ -7,8 +7,8 @@ const port = process.env.PORT || 5000;
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get('/api/passwords', (req, res) => {
-  const count = 5;
+app.get('/api/passwords/:count', (req, res) => {
+  let count = parseInt(req.params.count);
 
   const passwords = Array.from(Array(count).keys()).map(i =>
     generatePassword(12, false)
@@ -20,7 +20,7 @@ app.get('/api/passwords', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 
