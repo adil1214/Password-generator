@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-    "start-watch": "nodemon start"
+    "start-watch": "nodemon start",
+    "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "dependencies": {
     "express": "^4.16.3",
