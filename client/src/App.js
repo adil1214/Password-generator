@@ -41,7 +41,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        {/* Render the passwords if we have them */}
         {passwords.length ? (
           <div>
             <h1>{this.state.count} Password{this.state.count===1 ? '':'s'}.</h1>
@@ -61,7 +60,6 @@ class App extends Component {
             </button>
           </div>
         ) : (
-          // Render a helpful message otherwise
           <div>
             <h1>No passwords :(</h1>
             <button
